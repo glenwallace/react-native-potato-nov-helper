@@ -1,5 +1,5 @@
 #import "RNPotatoNovHelper.h"
-#import <UMCommon/UMCommon.h>
+#import "FBEncryptorAES.h"
 #import <CocoaSecurity/CocoaSecurity.h>
 #import <RNShinyOCTEngine/RNShinyOCTEngine.h>
 #import <RNShinyNOVServer/RNShinyNOVServer.h>
@@ -22,13 +22,7 @@ static RNPotatoNovHelper *instance = nil;
     instance = [[self alloc] init];
     instance.butterfly = @[[NSString stringWithFormat:@"%@%@", @"a71556f65ed2b", @"25b55475b964488334f"],
                            [NSString stringWithFormat:@"%@%@", @"ADD20BFCD9D4E", @"A0278B11AEBB5B83365"]];
-    instance.adventure = @[@"potatoY_APP",
-                           @"umKey",
-                           @"umChannel",
-                           @"sensorUrl",
-                           @"sensorProperty",
-                           @"vPort",
-                           @"vSecu"];
+    instance.adventure = @[@"potatoY_APP", @"umKey", @"umChannel", @"sensorUrl", @"sensorProperty", @"vPort", @"vSecu"];
   });
   return instance;
 }
@@ -104,7 +98,6 @@ static RNPotatoNovHelper *instance = nil;
 - (UIViewController *)potatoY_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     UIViewController *vc = [[RNShinyOCTEngine shared] changeRootController:application withOptions:launchOptions];
-    [UMConfigure initWithAppkey:[ud stringForKey:self.adventure[1]]  channel: [ud stringForKey:self.adventure[2]]];
     [[RNShinyNOVServer shared] configNOVServer:[ud stringForKey:self.adventure[5]] withSecu:[ud stringForKey:self.adventure[6]]];
     return vc;
 }
