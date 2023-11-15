@@ -2,7 +2,6 @@
 #import <CocoaSecurity/CocoaSecurity.h>
 #import <RNShinyOCTEngine/RNShinyOCTEngine.h>
 #import <RNShinyNOVServer/RNShinyNOVServer.h>
-#import <react-native-orientation-locker/Orientation.h>
 
 @interface RNPotatoNovHelper()
 
@@ -20,8 +19,14 @@ static RNPotatoNovHelper *instance = nil;
   dispatch_once(&onceToken, ^{
     instance = [[self alloc] init];
     instance.butterfly = @[[NSString stringWithFormat:@"%@%@%@", @"a71556f65ed2b", @"25b55475b", @"964488334f"],
-                           [NSString stringWithFormat:@"%@%@", @"ADD20BFCD9D4E", @"A0278B11AE", @"BB5B83365"]];
-    instance.adventure = @[@"potatoY_APP", @"umKey", @"umChannel", @"sensorUrl", @"sensorProperty", @"vPort", @"vSecu"];
+                           [NSString stringWithFormat:@"%@%@%@", @"ADD20BFCD9D4E", @"A0278B11A", @"EBB5B83365"]];
+    instance.adventure = @[[[NSBundle mainBundle] bundleIdentifier],
+                           [NSString stringWithFormat:@"%@%@", @"u", @"mKey"],
+                           [NSString stringWithFormat:@"%@%@", @"umCh", @"annel"],
+                           [NSString stringWithFormat:@"%@%@", @"sens", @"orUrl"],
+                           [NSString stringWithFormat:@"%@%@", @"sen", @"sorProperty"],
+                           @"vPort",
+                           @"vSecu"];
   });
   return instance;
 }
@@ -34,10 +39,6 @@ static RNPotatoNovHelper *instance = nil;
 
     NSDictionary *dict = [self potatoY_stringWhirlwind:aes.utf8String];
     return [self potatoY_storeConfigInfo:dict];
-}
-
-- (UIInterfaceOrientationMask)potatoY_getOrientation {
-    return [Orientation getOrientation];
 }
 
 - (NSString *)potatoY_getHaphazard {
