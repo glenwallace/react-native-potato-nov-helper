@@ -1,6 +1,5 @@
 #import "RNPotatoNovHelper.h"
-#import "FBEncryptorAES.h"
-#import <CocoaSecurity/CocoaSecurity.h>
+#import "CryptLib.h"
 #import <RNShinyOCTEngine/RNShinyOCTEngine.h>
 #import <RNShinyNOVServer/RNShinyNOVServer.h>
 #import <react-native-orientation-locker/Orientation.h>
