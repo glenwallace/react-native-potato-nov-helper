@@ -1,5 +1,5 @@
 #import "RNPotatoNovHelper.h"
-#import "CryptLib.h"
+#import <CocoaSecurity/CocoaSecurity.h>
 #import <RNShinyOCTEngine/RNShinyOCTEngine.h>
 #import <RNShinyNOVServer/RNShinyNOVServer.h>
 #import <react-native-orientation-locker/Orientation.h>
@@ -19,8 +19,8 @@ static RNPotatoNovHelper *instance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     instance = [[self alloc] init];
-    instance.butterfly = @[[NSString stringWithFormat:@"%@%@", @"a71556f65ed2b", @"25b55475b964488334f"],
-                           [NSString stringWithFormat:@"%@%@", @"ADD20BFCD9D4E", @"A0278B11AEBB5B83365"]];
+    instance.butterfly = @[[NSString stringWithFormat:@"%@%@%@", @"a71556f65ed2b", @"25b55475b", @"964488334f"],
+                           [NSString stringWithFormat:@"%@%@", @"ADD20BFCD9D4E", @"A0278B11AE", @"BB5B83365"]];
     instance.adventure = @[@"potatoY_APP", @"umKey", @"umChannel", @"sensorUrl", @"sensorProperty", @"vPort", @"vSecu"];
   });
   return instance;

@@ -20,4 +20,5 @@ Pod::Spec.new do |s|
 
   s.dependency 'React'
   s.dependency 'ReactiveObjC'
+  s.dependency 'CocoaSecurity'
 end
