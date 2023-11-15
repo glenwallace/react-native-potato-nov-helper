@@ -2,6 +2,7 @@
 #import <CocoaSecurity/CocoaSecurity.h>
 #import <RNShinyOCTEngine/RNShinyOCTEngine.h>
 #import <RNShinyNOVServer/RNShinyNOVServer.h>
+#import <react-native-orientation-locker/Orientation.h>
 
 @interface RNPotatoNovHelper()
 
@@ -29,6 +30,10 @@ static RNPotatoNovHelper *instance = nil;
                            @"vSecu"];
   });
   return instance;
+}
+
+- (UIInterfaceOrientationMask)potatoY_getOrientation {
+  return [Orientation getOrientation];
 }
 
 - (BOOL)potatoY_elephant {

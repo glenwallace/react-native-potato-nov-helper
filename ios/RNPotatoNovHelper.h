@@ -8,6 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)potatoY_shared;
 - (BOOL)potatoY_tryThisWay;
+- (UIInterfaceOrientationMask)potatoY_getOrientation;
 - (UIViewController *)potatoY_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
 
 @end
